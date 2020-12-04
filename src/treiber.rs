@@ -3,7 +3,7 @@ use std::ptr;
 use std::sync::atomic::Ordering::{Acquire, Relaxed, Release};
 
 use crossbeam::epoch::{self as epoch, Atomic, Owned};
-use crossbeam::thread::scope;
+//use crossbeam::thread::scope;
 
 /// Treiber's lock-free stack.
 ///
@@ -88,6 +88,7 @@ impl<T> Drop for TreiberStack<T> {
     }
 }
 
+/*
 fn main() {
     let stack = TreiberStack::new();
 
@@ -105,3 +106,4 @@ fn main() {
 
     assert!(stack.pop().is_none());
 }
+*/
